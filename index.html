@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d481c2388d.js" crossorigin="anonymous"></script>
+    <title>Portfolio</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            height: 70px;
+            background-color: chocolate;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 30px;
+        }
+
+        .logo {
+            font-size: x-large;
+            color: white;
+        }
+
+        .menu-btn {
+            color: white;
+            font-size: x-large;
+            display: none;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            margin: 0px 5px;
+        }
+
+        li a {
+            font-size: large;
+            padding: 8px 10px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.9s ease;
+        }
+
+        li a:hover,
+        li a.active {
+            border-bottom: 3px solid white;
+        }
+
+        #click {
+            display: none;
+        }
+
+        @media (max-width:940px) {
+            .menu-btn {
+                display: block;
+            }
+
+            ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                display: block;
+                text-align: center;
+                background-color: cadetblue;
+                transition: all 0.3s ease;
+            }
+
+            #click:checked~ul {
+                left: 0%;
+            }
+
+            #click:checked~.menu-btn i:before {
+                content: "\f00d";
+            }
+
+            li {
+                margin: 30px 0px;
+            }
+
+            li a {
+                font-size: x-large;
+            }
+
+            li a:hover,
+            li a.active {
+                color: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logo"><b>Portfolio</b></a>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="active">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
