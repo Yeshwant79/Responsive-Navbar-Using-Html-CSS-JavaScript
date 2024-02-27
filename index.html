@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d481c2388d.js" crossorigin="anonymous"></script>
+    <title>Portfolio</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            height: 60px;
+            background-color: tomato;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 30px;
+        }
+
+        .logo {
+            font-size: x-large;
+            color: white;
+        }
+
+        #toggle {
+            color: white;
+            font-size: x-large;
+            display: none;
+        }
+
+        #menu {
+            list-style: none;
+            display: flex;
+        }
+
+        #menu li {
+            margin: 0px 5px;
+        }
+
+        #menu a {
+            font-size: large;
+            padding: 8px 10px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.9s ease;
+            text-decoration: none;
+            color: black;
+        }
+
+        #menu a:hover,
+        #menu a.active {
+            border-bottom: 3px solid white;
+            color: white;
+        }
+
+        @media (max-width:940px) {
+            #toggle {
+                display: block;
+            }
+
+            #menu {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 40%;
+                height: calc(100vh - 60px);
+                display: block;
+                text-align: center;
+                background-color: cadetblue;
+                transition: all 0.3s ease;
+            }
+
+            #menu.active {
+                left: 0%;
+            }
+
+            #toggle.active:before {
+                content: "\f00d";
+            }
+
+            #menu li {
+                margin: 30px 0px;
+            }
+
+            #menu a {
+                font-size: x-large;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logo"><b>Portfolio</b></a>
+        <div>
+            <a><i id="toggle" class="fa-solid fa-bars"></i></a>
+        </div>
+        <ul id="menu">
+            <li><a href="https://www.google.com/" target="-blank">Home</a></li>
+            <li><a href="https://www.yahoo.com/" target="-blank">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        const toggle = document.getElementById("toggle");
+        const menu = document.getElementById("menu");
+
+        document.onclick = (e) => {
+            if (e.target.id !== "menu" && e.target.id !== "toggle") {
+                toggle.classList.remove('active');
+                menu.classList.remove('active');
+            }
+            toggle.onclick = () => {
+                toggle.classList.toggle('active');
+                menu.classList.toggle('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
