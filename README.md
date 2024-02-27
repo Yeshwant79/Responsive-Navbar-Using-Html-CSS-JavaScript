@@ -1,0 +1,3 @@
+-Simple Navbar using pure HTML and CSS.
+-For Menu button I have use Font Awesome Icons.
+-In this navbar there is no closing option when we click outside.
