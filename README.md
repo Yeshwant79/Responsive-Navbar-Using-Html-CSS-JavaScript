@@ -1,5 +1,5 @@
--Simple Navbar using pure HTML and CSS.
+-Proper Navbar using pure HTML,CSS and JavaScript.
 <br>
 -For Menu button I have use Font Awesome Icons.
 <br>
--In this navbar there is no closing option when we click outside.
+-This Nav bar is updated version of simple-navbar
